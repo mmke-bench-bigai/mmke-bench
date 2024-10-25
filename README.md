@@ -3,7 +3,7 @@
 <p>
 <h5 align="center"> If you like our project, please give us a star ⭐ on GitHub.  </h2>
 	
-[![arXiv PDF](https://img.shields.io/badge/Arxiv-406.11194-ff5733?logo=arXiv)]()  [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-MMKE--Bench--Dataset-lightgrey)]()  [![Model](https://img.shields.io/badge/%F0%9F%A4%97%20Model-MMKE--Bench--Model-3357ff)](https://huggingface.co/datasets/MMMU/MMMU)  [![GitHub Code](https://img.shields.io/badge/GitHub-Code-ffd700?logo=github)]()  [![Slides PDF](https://img.shields.io/badge/Slides-PDF-ff1493?logo=slideshare)](static/Slides/MMKE-Bench.pdf)
+[![arXiv PDF](https://img.shields.io/badge/Arxiv-406.11194-ff5733?logo=arXiv)]()  [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-MMKE--Bench--Dataset-lightgrey)]()  [![Model](https://img.shields.io/badge/%F0%9F%A4%97%20Model-MMKE--Bench--Model-3357ff)](https://huggingface.co/datasets/MMMU/MMMU)  [![GitHub Code](https://img.shields.io/badge/GitHub-Code-ffd700?logo=github)]()  [![Slides PDF](https://img.shields.io/badge/Slides-PDF-ff1493?logo=slideshare)](MMKE-Bench.pdf)
 
 
 
