@@ -113,91 +113,65 @@ conda activate ICE
 pip install -r requirements.txt
 ```
 
-In **lines 32 and 33** of **` examples/run_knowedit_llama2.py`**, you need to download the **` punkt `** package.
-
-- If your Internet **speed is fast** enough, you can **run the code directly** from the command line.
-
-```text
-if __name__ == "__main__":
-    # If you have a slow Internet connection and can't download nltk quickly, comment these two lines and use the second method of Requirements and Installation in README.md
-    import nltk
-    nltk.download('punkt')
-```
-
-- If your Internet **speed is slow**, **comment lines 32 and 33** and **download punkt manually**🤗 [punkt]([kailinjiang/punkt · Datasets at Hugging Face](https://huggingface.co/datasets/kailinjiang/punkt)). And place it in the ICE environment directory you created, create a **nltk_data/tokenizers** folder, and **unpack punkt** into this directory.
-
-<div align="center">   <img src="assets/punkt.png" width="650px"> </div>
-
 
 
 ## 💥Training
 
-We provide the training hyperparameters for five methods in `./hparams`. 
-
-For ICE, we update **GPT2-xl** using **layers 13 to 17** and **Llama2-7b-chat** using **layers 4 to 8**. 
-
-Both FT-L and FT-M use the same hparams located in `./hparams/FT`. 
-
-For FT-L, replace `objective_optimization` with `prompt_last`, and for FT-M, replace it with `target_new`. For details on other methods, please refer to [EasyEdit](https://github.com/zjunlp/EasyEdit). You can execute the following commands to obtain results:
-
-**For ICE:**
+**For FT-LLM:**
 
 ```shell
-python examples/run_knowedit_llama2.py \
-	--editing_method=ICE \
-	--hparams_dir=./hparams/ICE/gpt2-xl.yaml \
-    --data_dir=./data/zsre.json \  
-    --datatype='zsre' \  
-    --metrics_save_dir=./results/gpt2-xl/ICE
+python multimodal_edit.py --function_name=test_FT_LLaVA --hop=1 --data_type=entity
+
+function_name in ['test_FT_LLaVA','test_FT_MiniGPT4','test_FT_Blip2OPT']
+data_type in ['entity','visual','user']
 ```
 
-**For FT-L:**
+**For FT-Alignment:**
 
 ```shell
-python examples/run_knowedit_llama2.py \
-	--editing_method=FT-L \
-	--hparams_dir=./hparams/ICE/gpt2-xl.yaml \
-    --data_dir=./data/zsre.json \  
-    --datatype='zsre' \  
-    --metrics_save_dir=./results/gpt2-xl/ICE
+python multimodal_edit.py --function_name=test_FT_LLaVA_mmproj --hop=1 --data_type=entity
+
+function_name in ['test_FT_LLaVA_mmproj','test_FT_MiniGPT4_Qformer','test_FT_Blip2OPT_QFormer']
+data_type in ['entity','visual','user']
 ```
 
-**For FT-M:**
+**For SERAC:**
 
 ```shell
-python examples/run_knowedit_llama2.py \
-	--editing_method=FT-M \
-	--hparams_dir=./hparams/ICE/gpt2-xl.yaml \
-    --data_dir=./data/zsre.json \  
-    --datatype='zsre' \  
-    --metrics_save_dir=./results/gpt2-xl/ICE
+python multimodal_edit.py --function_name=train_SERAC_LLaVA --hop=1 --data_type=entity
+
+function_name in ['train_SERAC_LLaVA','train_SERAC_MiniGPT4','train_SERAC_Blip2OPT']
+data_type in ['entity','visual','user']
 ```
 
-**For MEMIT:**
+**For MEND:**
 
 ```shell
-python examples/run_knowedit_llama2.py \
-	--editing_method=MEMIT \
-	--hparams_dir=./hparams/ICE/gpt2-xl.yaml \
-    --data_dir=./data/zsre.json \  
-    --datatype='zsre' \  
-    --metrics_save_dir=./results/gpt2-xl/ICE
+python multimodal_edit.py --function_name=train_MEND_LLaVA --hop=1 --data_type=entity
+
+function_name in ['train_MEND_LLaVA','train_MEND_MiniGPT4','train_MEND_Blip2OPT']
+data_type in ['entity','visual','user']
 ```
 
-**For ROME:**
+**For IKE:**
 
 ```shell
-python examples/run_knowedit_llama2.py \
-	--editing_method=ROME \
-	--hparams_dir=./hparams/ICE/gpt2-xl.yaml \
-    --data_dir=./data/zsre.json \  
-    --datatype='zsre' \  
-    --metrics_save_dir=./results/gpt2-xl/ICE
+python multimodal_edit.py --function_name=test_IKE_LLaVA --hop=1 --data_type=entity
+
+function_name in ['test_IKE_LLaVA','test_IKE_MiniGPT4','test_IKE_Blip2OPT']
+data_type in ['entity','visual','user']
 ```
 
-The optional range of `datatype` is `['zsre','recent','counterfact','wikibio']` 
+**For KE:**
 
+```shell
+bash KE/train_ke.sh 0 llava entity
+bash KE/train_ke.sh 0 minigpt4 entity
+bash KE/train_ke.sh 0 blip2 entity
 
+model_name in ['llava','minigpt4','blip2']
+data_type in ['entity','visual','user']
+```
 
 
 
