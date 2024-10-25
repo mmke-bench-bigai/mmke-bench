@@ -96,9 +96,7 @@ We introduce <strong><span style="color:brown">MMKE-Bench</span></strong>, a ben
   <img src="figs/sunburst_chart_v1.png" width="500px">
 </div>
 
-​																								
-
-
+​																							
 You can download **MMKE-Bench data** 🤗 [Huggingface Dataset](https://huggingface.co/datasets/Yofuria/ICE). And the expected structure of files is:
 
 ```text
