@@ -435,7 +435,7 @@ If you find our paper and code useful in your research, please consider giving a
 
 
 
-## Star History
+## ⭐ Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=mmke-bench-bigai/mmke-bench&type=Date)](https://star-history.com/#mmke-bench-bigai/mmke-bench&Date)
 
@@ -443,7 +443,7 @@ If you find our paper and code useful in your research, please consider giving a
 
 
 
-## 🎉Contributors
+## 🎉 Contributors
 
 <a href="https://github.com/mmke-bench-bigai/mmke-bench/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=mmke-bench-bigai/mmke-bench" />
