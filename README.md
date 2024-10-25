@@ -18,7 +18,7 @@
 - [🛠️ Requirements and Installation](#️-requirements-and-installation)
 - [💥Training](#training)
 - [✏️ Citation](#️-citation)
-- [Star History](#star-history)
+- [⭐ Star History](#star-history)
 - [🎉Contributors](#contributors)
 
 
@@ -27,11 +27,11 @@
 
 ## 🔔 News
 
-* **[2024.07.02]**  **Code** is available now!
+* **[2024.10.25]**  **Code** is available now!
 
-* **[2024.07.02]**  We release the **ICE dataset** at 🤗 [Huggingface Dataset](https://huggingface.co/datasets/Yofuria/ICE).
+* **[2024.10.25]**  We release the **MMKE-Bench dataset** at 🤗 [Huggingface Dataset](https://huggingface.co/datasets/Yofuria/ICE).
 
-* **[2023.06.18]**  We hung the **paper** on 🤗 [Huggingface Papers](https://huggingface.co/papers/2406.11194).
+* **[2023.10.25]**  We hung the **paper** on 🤗 [Huggingface Papers](https://huggingface.co/papers/2406.11194).
 
   
 
