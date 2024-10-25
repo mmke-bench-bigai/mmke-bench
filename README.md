@@ -11,19 +11,19 @@
 
 - [Table of Contents](#table-of-contents)
 - [🔔 News](#-news)
-- [🌟Overview](#overview)
+- [🌟 Overview](#overview)
 - [🤗 Dataset](#-dataset)
 - [😮 Highlights](#-highlights)
   - [🔥 Target learning towards a distribution rather than a one-hot target](#-target-learning-towards-a-distribution-rather-than-a-one-hot-target)
   - [💡 High continual editing performance](#-high-continual-editing-performance)
 - [🛠️ Requirements and Installation](#️-requirements-and-installation)
 - [🤖 Evaluation](#-evaluation)
-- [💥Training](#training)
+- [💥 Training](#training)
 - [🚀 Main Results](#-main-results)
 - [⚡️ More qualitative results](#️-more-qualitative-results)
 - [👍 Acknowledgement](#-acknowledgement)
 - [✏️ Citation](#️-citation)
-- [Star History](#star-history)
+- [⭐ Star History](#star-history)
 - [🎉Contributors](#contributors)
 
 
