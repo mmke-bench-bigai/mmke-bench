@@ -101,8 +101,9 @@ MMKE-Bench
 ## 🛠️ Requirements and Installation
 
 ```text
-# clone ICE
-git clone https://github.com/Yofuria/ICE.git
+# clone MMKE-Bench
+git clone https://github.com/mmke-bench-bigai/mmke-bench.git
+
 cd ICE
 
 # create conda env
