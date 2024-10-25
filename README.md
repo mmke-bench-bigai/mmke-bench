@@ -72,42 +72,29 @@
 <p align="justify">
 We introduce <strong><span style="color:brown">MMKE-Bench</span></strong>, a benchmark designed to evaluate the ability of LMMs to edit visual knowledge in real-world scenarios. <strong><span style="color:brown">MMKE-Bench</span></strong> incorporates three editing tasks: <strong><span style="color:brown">visual entity editing</span></strong>, <strong><span style="color:brown">visual semantic editing</span></strong>, and <strong><span style="color:brown">user-specific editing</span></strong>. Additionally, it uses free-form natural language to represent and edit knowledge, offering more flexibility. The benchmark includes <strong><span style="color:brown">2,940</span></strong> pieces of knowledge and <strong><span style="color:brown">7,229</span></strong> images across 110 fine-grained types, with automatically generated, human-verified evaluation questions.
 </p>
+<div style="text-align: center;">
+  <strong>Overall comparison with existing multimodal knowledge editing benchmarks>
+</div>
 
+<div align="center">
+  <img src="figs/tabel1.png" width="900px">
+</div>
 
-<table style="width: 100%; text-align: center;">
-  <tr>
-    <td>
-      <h2 style="font-size: 20px;">Overall comparison with existing multimodal knowledge editing benchmarks</h2>
-      <img src="figs/tabel1.png" alt="The statistics of MMKE-Bench" style="width: 900px; height: auto;" />
-    </td>
-  </tr>
-</table>
+<div style="text-align: center;">
+  <strong>The statistics of MMKE-Bench</strong>
+</div>
 
+<div align="center">
+  <img src="figs/statis.png" width="700px">
+</div>
 
+<div style="text-align: center;">
+  <strong>The types of samples in MMKE-Bench</strong>
+</div>
 
-
-<table style="width: 100%; text-align: center;">
-  <tr>
-    <td>
-      <h2 style="font-size: 20px;">The statistics of MMKE-Bench</h2>
-      <img src="figs/statis.png" alt="The statistics of MMKE-Bench" style="width: 700px; height: auto;" />
-    </td>
-  </tr>
-</table>
-
-
-
-<table style="width: 100%; text-align: center;">
-  <tr>
-    <td>
-      <h2 style="font-size: 20px;">The types of samples in MMKE-Bench</h2>
-      <img src="figs/sunburst_chart_v1.png" alt="The statistics of MMKE-Bench" style="width: 500px; height: auto;" />
-    </td>
-  </tr>
-</table>
-
-
-
+<div align="center">
+  <img src="figs/sunburst_chart_v1.png" width="500px">
+</div>
 
 ​																								
 
