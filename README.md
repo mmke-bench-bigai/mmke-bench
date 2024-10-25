@@ -180,15 +180,11 @@ data_type in ['entity','visual','user']
 If you find our paper and code useful in your research, please consider giving a star :star: and citation :pencil:.
 
 ```text
-@article{qi2024ice,
-      title={In-Context Editing: Learning Knowledge from Self-Induced Distributions}, 
-      author={Siyuan Qi and Bangcheng Yang and Kailin Jiang and Xiaobo Wang and Jiaqi Li and Yifan Zhong and Yaodong Yang and Zilong Zheng},
-      year={2024},
-      eprint={2406.11194},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2406.11194}, 
-}
+@article{du2024mmke_bench,
+            title = {MMKE-Bench: A Multimodal Editing Benchmark for Diverse Visual Knowledge},
+            author = {Yuntao Du and Kailin Jiang and Zhi Gao and Chenrui Shi and Zilong Zheng and Siyuan Qi and Qing Li},
+            year = {2024}
+          }
 ```
 
 
