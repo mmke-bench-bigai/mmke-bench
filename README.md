@@ -74,24 +74,40 @@ We introduce <strong><span style="color:brown">MMKE-Bench</span></strong>, a ben
 </p>
 
 
-<div style="text-align: center;">
-  <h2 style="font-size: 20px;">Overall comparison with existing multimodal knowledge editing benchmarks</h2>
-  <img src="figs/tabel1.png" alt="The statistics of MMKE-Bench" style="width: 900px; height: auto;" />
-</div>
+<table style="width: 100%; text-align: center;">
+  <tr>
+    <td>
+      <h2 style="font-size: 20px;">Overall comparison with existing multimodal knowledge editing benchmarks</h2>
+      <img src="figs/tabel1.png" alt="The statistics of MMKE-Bench" style="width: 900px; height: auto;" />
+    </td>
+  </tr>
+</table>
 
 
 
-<div style="text-align: center;">
-  <h2 style="font-size: 20px;">The statistics of MMKE-Bench</h2>
-  <img src="figs/statis.png" alt="The statistics of MMKE-Bench" style="width: 700px; height: auto;" />
-</div>
+
+<table style="width: 100%; text-align: center;">
+  <tr>
+    <td>
+      <h2 style="font-size: 20px;">The statistics of MMKE-Bench</h2>
+      <img src="figs/statis.png" alt="The statistics of MMKE-Bench" style="width: 700px; height: auto;" />
+    </td>
+  </tr>
+</table>
 
 
 
-<div style="text-align: center;">
-  <h2 style="font-size: 20px;">The types of samples in MMKE-Bench</h2>
-  <img src="figs/sunburst_chart_v1.png" alt="The statistics of MMKE-Bench" style="width: 500px; height: auto;" />
-</div>
+<table style="width: 100%; text-align: center;">
+  <tr>
+    <td>
+      <h2 style="font-size: 20px;">The types of samples in MMKE-Bench</h2>
+      <img src="figs/sunburst_chart_v1.png" alt="The statistics of MMKE-Bench" style="width: 500px; height: auto;" />
+    </td>
+  </tr>
+</table>
+
+
+
 
 ​																								
 
