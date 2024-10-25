@@ -72,9 +72,12 @@
 <p align="justify">
 We introduce <strong><span style="color:brown">MMKE-Bench</span></strong>, a benchmark designed to evaluate the ability of LMMs to edit visual knowledge in real-world scenarios. <strong><span style="color:brown">MMKE-Bench</span></strong> incorporates three editing tasks: <strong><span style="color:brown">visual entity editing</span></strong>, <strong><span style="color:brown">visual semantic editing</span></strong>, and <strong><span style="color:brown">user-specific editing</span></strong>. Additionally, it uses free-form natural language to represent and edit knowledge, offering more flexibility. The benchmark includes <strong><span style="color:brown">2,940</span></strong> pieces of knowledge and <strong><span style="color:brown">7,229</span></strong> images across 110 fine-grained types, with automatically generated, human-verified evaluation questions.
 </p>
+
+
 <div style="text-align: center;">
-  <strong>Overall comparison with existing multimodal knowledge editing benchmarks>
+  <strong>Overall comparison with existing multimodal knowledge editing benchmarks
 </div>
+
 
 <div align="center">
   <img src="figs/tabel1.png" width="900px">
@@ -96,7 +99,9 @@ We introduce <strong><span style="color:brown">MMKE-Bench</span></strong>, a ben
   <img src="figs/sunburst_chart_v1.png" width="500px">
 </div>
 
-​																							
+
+
+
 You can download **MMKE-Bench data** 🤗 [Huggingface Dataset](https://huggingface.co/datasets/Yofuria/ICE). And the expected structure of files is:
 
 ```text
