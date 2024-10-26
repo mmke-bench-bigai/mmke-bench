@@ -107,8 +107,8 @@ git clone https://github.com/mmke-bench-bigai/mmke-bench.git
 cd ICE
 
 # create conda env
-conda create -n ICE python=3.10
-conda activate ICE
+conda create -n mmke-bench python=3.10
+conda activate mmke-bench
 
 # install package
 pip install -r requirements.txt
