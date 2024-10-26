@@ -104,7 +104,7 @@ MMKE-Bench
 # clone MMKE-Bench
 git clone https://github.com/mmke-bench-bigai/mmke-bench.git
 
-cd ICE
+cd mmke-bench
 
 # create conda env
 conda create -n mmke-bench python=3.10
