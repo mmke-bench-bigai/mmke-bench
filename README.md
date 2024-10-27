@@ -174,6 +174,17 @@ model_name in ['llava','minigpt4','blip2']
 data_type in ['entity','visual','user']
 ```
 
+Editing GPU memory usage
+|              |  BLIP2-OPT | LLaVA-1.5| MiniGPT-4| --     |
+|:------------:|:----------:|:--------:|:--------:|:------:|
+|    FT-LLM    |    60GB    |   58GB   |   55GB   |  7GB   |
+| FT-Alignment |    60GB    |   58GB   |   55GB   |  7GB   |
+|     SERAC    |    42GB    |   32GB   |   31GB   |  10GB  |
+|      IKE     |    52GB    |   38GB   |   38GB   |  10GB  |
+|     MEND     |    46GB    |   37GB   |   37GB   |  13GB  |
+|      KE      |    42GB    |   39GB   |   40GB   |  12GB  |
+
+
 
 
 ## ✏️ Citation
