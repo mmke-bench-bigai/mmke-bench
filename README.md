@@ -107,11 +107,8 @@ git clone https://github.com/mmke-bench-bigai/mmke-bench.git
 cd mmke-bench
 
 # create conda env
-conda create -n mmke-bench python=3.10
-conda activate mmke-bench
+conda env create -f envs/mmke.yml
 
-# install package
-pip install -r requirements.txt
 ```
 
 
