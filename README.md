@@ -216,8 +216,6 @@ hugging_cache/
 ├── mplug-owl2-llama2-7b/
 ├── opt-2.7b/
 ├── opt-125m/
-├── Qwen-7B/
-├── Qwen-VL/
 ├── vicuna-7b/
 ├── vicuna-7b-v1.5/
 │   
@@ -243,8 +241,6 @@ Links are in the following:
         <td><a href="https://huggingface.co/facebook/opt-125m">opt-125m</a></td>
     </tr>
     <tr>
-        <td><a href="https://huggingface.co/Qwen/Qwen-7B">Qwen-7B</a></td>
-        <td><a href="https://huggingface.co/Qwen/Qwen-VL">Qwen-VL</a></td>
         <td><a href="https://huggingface.co/Vision-CAIR/vicuna-7b/tree/main">vicuna-7b</a></td>
     </tr>
     <tr>
