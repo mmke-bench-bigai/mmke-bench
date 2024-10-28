@@ -40,7 +40,7 @@ class MLLM_KE(LightningModule):
 
         if self.hparams.model_name == 'blip2':
             self.model_hparams = MultimodalTrainingHparams.from_hparams(
-                '../hparams/TRAINING/KE/blip2.yaml'
+                'hparams/TRAINING/KE/blip2.yaml'
             )
             vocab_dim = self.model.opt_model.model.decoder.embed_tokens.weight.shape[0]
             embedding_dim = self.model.opt_model.model.decoder.embed_tokens.weight.shape[1]
@@ -48,7 +48,7 @@ class MLLM_KE(LightningModule):
 
         elif self.hparams.model_name == 'minigpt4':
             self.model_hparams = MultimodalTrainingHparams.from_hparams(
-                '../hparams/TRAINING/KE/minigpt4.yaml'
+                'hparams/TRAINING/KE/minigpt4.yaml'
             )
             vocab_dim = self.model.llama_model.model.embed_tokens.weight.shape[0]
             embedding_dim = self.model.llama_model.model.embed_tokens.weight.shape[1]
@@ -56,7 +56,7 @@ class MLLM_KE(LightningModule):
             
         elif self.hparams.model_name == 'llava':
             self.model_hparams = MultimodalTrainingHparams.from_hparams(
-                '../hparams/TRAINING/KE/llava.yaml'
+                'hparams/TRAINING/KE/llava.yaml'
             )
             vocab_dim = self.model.model.embed_tokens.weight.shape[0]
             embedding_dim = self.model.model.embed_tokens.weight.shape[1]
@@ -64,7 +64,7 @@ class MLLM_KE(LightningModule):
 
         elif self.hparams.model_name == 'qwen-vl':
             self.model_hparams = MultimodalTrainingHparams.from_hparams(
-                '../hparams/TRAINING/KE/qwenvl.yaml'
+                'hparams/TRAINING/KE/qwenvl.yaml'
             )
             self.model, self.tokenizer = get_model(self.model_hparams.name)
             vocab_dim = self.model.transformer.wte.weight.data.shape[0]
@@ -73,7 +73,7 @@ class MLLM_KE(LightningModule):
 
         elif self.hparams.model_name == 'owl-2':
             self.model_hparams = MultimodalTrainingHparams.from_hparams(
-                '../hparams/TRAINING/KE/owl2.yaml'
+                'hparams/TRAINING/KE/owl2.yaml'
             )
             self.model, self.tokenizer = get_model(self.model_hparams.name)
             vocab_dim = self.model.base_model.embed_tokens.weight.data.shape[0]
