@@ -171,16 +171,30 @@ model_name in ['llava','minigpt4','blip2']
 data_type in ['entity','visual','user']
 ```
 
-Editing GPU memory usage
-|              |  BLIP2-OPT | LLaVA-1.5| MiniGPT-4| --     |
+Editing GPU memory usage 
+|     Entity   |  BLIP2-OPT | LLaVA-1.5| MiniGPT-4| --     |
 |:------------:|:----------:|:--------:|:--------:|:------:|
-|    FT-LLM    |    60GB    |   58GB   |   55GB   |  7GB   |
-| FT-Alignment |    60GB    |   58GB   |   55GB   |  7GB   |
-|     SERAC    |    42GB    |   32GB   |   31GB   |  10GB  |
+|    FT-LLM    |    21GB    |   35GB   |   45GB   |  7GB   |
+| FT-Alignment |    24GB    |   40GB   |   50GB   |  7GB   |
+|     SERAC    |    17GB    |   32GB   |   67GB   |  10GB  |
 |      IKE     |    52GB    |   38GB   |   38GB   |  10GB  |
-|     MEND     |    46GB    |   37GB   |   37GB   |  13GB  |
-|      KE      |    42GB    |   39GB   |   40GB   |  12GB  |
+|     MEND     |    23GB    |   61GB   |   43GB   |  13GB  |
 
+|     Visual   |  BLIP2-OPT | LLaVA-1.5| MiniGPT-4| --     |
+|:------------:|:----------:|:--------:|:--------:|:------:|
+|    FT-LLM    |    21GB    |   35GB   |   45GB   |  7GB   |
+| FT-Alignment |    23GB    |   39GB   |   48GB   |  7GB   |
+|     SERAC    |    16GB    |   73GB   |   58GB   |  10GB  |
+|      IKE     |    52GB    |   38GB   |   38GB   |  10GB  |
+|     MEND     |    21GB    |   55GB   |   40GB   |  13GB  |
+
+|     User     |  BLIP2-OPT | LLaVA-1.5| MiniGPT-4| --     |
+|:------------:|:----------:|:--------:|:--------:|:------:|
+|    FT-LLM    |    21GB    |   35GB   |   45GB   |  7GB   |
+| FT-Alignment |    23GB    |   38GB   |   48GB   |  7GB   |
+|     SERAC    |    15GB    |   71GB   |   56GB   |  10GB  |
+|      IKE     |    52GB    |   38GB   |   38GB   |  10GB  |
+|     MEND     |    21GB    |   54GB   |   39GB   |  13GB  |
 
 
 
