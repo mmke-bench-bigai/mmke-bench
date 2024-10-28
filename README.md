@@ -173,6 +173,8 @@ bash KE/train_ke.sh 0 blip2 entity
 model_name in ['llava','minigpt4','blip2']
 data_type in ['entity','visual','user']
 
+bash KE/test_multihop.sh 0 llava 1 entity
+bash KE/test_multihop.sh 0 minigpt4 1 entity
 bash KE/test_multihop.sh 0 blip2 1 entity
 ```
 
