@@ -6,15 +6,16 @@
 # MODEL_NAME=[blip2, minigpt4, llava]
 # HOP_NUM=[1, 2, 3, 4]
 
-Blip2_ckpt="/home/jiangkailin/project/VLKEB_F/KE/models/blip2/version_0/model-epoch=33-valid_acc=0.5959.ckpt"
-Mini_ckpt="models/minigpt4/version_15/checkpoints/model-epoch=03-valid_acc=0.9848_clean.ckpt"
-Llava_ckpt="models/llava/version_20/checkpoints/model-epoch=04-valid_acc=0.9907_clean.ckpt"
+Blip2_ckpt="/scratch2/mas/jiangkailin/jkl/MMKE-rebuttal/VLKEB_F/models/entity/blip2/version_0/checkpoints/model-epoch=15-valid_acc=0.6215.ckpt"
+Mini_ckpt="/scratch2/mas/jiangkailin/jkl/MMKE-rebuttal/VLKEB_F/models/entity/minigpt4/version_0/checkpoints/model-epoch=30-valid_acc=0.7267.ckpt"
+Llava_ckpt="/scratch2/mas/jiangkailin/jkl/MMKE-rebuttal/VLKEB_F/models/entity/llava/version_0/checkpoints/model-epoch=30-valid_acc=0.7554.ckpt"
 QwenVL_ckpt="KE/models/qwen-vl/version_11/checkpoints/model-epoch=03-valid_acc=0.9965.ckpt"
 Owl2_ckpt="KE/models/owl-2/version_1/checkpoints/model-epoch=02-valid_acc=0.9730.ckpt"
 
 GPU=$1
 MODEL=$2
 HOP=$3
+TYPE=$4
 
 if [ $MODEL == "blip2" ]; then
     CHECKPOINT=$Blip2_ckpt
@@ -33,9 +34,10 @@ fi
 
 export CUDA_VISIBLE_DEVICES=$GPU
 time=$(date "+%Y%m%d_%H%M%S")
-python KE/test_multihop.py \
+python test_multihop.py \
     --model_name $MODEL \
     --hop $HOP \
+    --data_type $TYPE \
     --model_checkpoint $CHECKPOINT \
     --gpus 1 \
     --num_workers 0 \
