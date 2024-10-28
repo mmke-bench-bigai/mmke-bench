@@ -109,6 +109,9 @@ cd mmke-bench
 # create conda env
 #for blip2 llava minigpt4 in FT IKE MEND SERAC 
 conda env create -f envs/mmke.yml
+
+#for blip2 llava minigpt4 in KE
+conda env create -f envs/mmke-ke.yml
 ```
 
 
