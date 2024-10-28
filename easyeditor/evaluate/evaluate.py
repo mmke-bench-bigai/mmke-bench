@@ -264,10 +264,7 @@ def process_predict(logits, labels, tok):
 
     mask = labels != -100
     labels[~mask] = 0
-    # 获取预测ID并根据掩码填充
     pred_ids = logits.argmax(-1).masked_fill(~mask, 0).detach().cpu()
-    
-    # 解码预测ID为字符串
     predict = tok.decode(pred_ids.tolist()[0], skip_special_tokens=True)
     return predict
 
@@ -441,7 +438,7 @@ def compute_icl_multimodal_edit_quality(
             ret['rel_2_acc_ground_truth']  = record["rel_ground_truth_2"]
             ret['rel_2_acc_predict'] = icl_multimodal_decode(model, model_name, hparams, tok, icl_examples, rel_ground_truth_2, new_fact_rel_prompt_2, None)
 
-        #新增mm reliability+ origin image
+   
         
             new_fact_m_rel_prompt_1_image = f'New Fact: {prompt} {target}\nPrompt: {m_rel_prompt_1}'
             m_rel_prompt_1_image_acc, _ = icl_multimodal_lm_eval(model, model_name, hparams, tok, icl_examples,m_rel_ground_truth_1, new_fact_m_rel_prompt_1_image, image)
@@ -459,9 +456,7 @@ def compute_icl_multimodal_edit_quality(
             ret['m_rel_2_acc_ground_truth']   = record["m_rel_ground_truth_2"]
             ret['m_rel_2_acc_predict']  = icl_multimodal_decode(model, model_name, hparams, tok, icl_examples, m_rel_ground_truth_2, new_fact_m_rel_prompt_2_image, image)
             
-    #新增mm reliability+ rephrase image
-        
-            #######  m_rel_prompt_1_image_acc
+
             new_fact_m_rel_prompt_1_image = f'New Fact: {prompt} {target}\nPrompt: {m_rel_prompt_1}'
             m_rel_prompt_1_image_rephrase_acc, _ = icl_multimodal_lm_eval(model, model_name, hparams, tok, icl_examples, m_rel_ground_truth_1, new_fact_m_rel_prompt_1_image, rephrase_image)
             ret['m_rel_prompt_1_image_rephrase_acc'] = m_rel_prompt_1_image_rephrase_acc
@@ -470,7 +465,7 @@ def compute_icl_multimodal_edit_quality(
             ret['m_rel_1_image_rephrase_acc_ground_truth'] = record["m_rel_ground_truth_1"]
             ret['m_rel_1_image_rephrase_acc_predict'] =  icl_multimodal_decode(model, model_name, hparams, tok, icl_examples, m_rel_ground_truth_1, new_fact_m_rel_prompt_1_image, rephrase_image)
 
-            #######  m_rel_prompt_2_image_acc
+
             new_fact_m_rel_prompt_2_image = f'New Fact: {prompt} {target}\nPrompt: {m_rel_prompt_2}'
             m_rel_prompt_2_image_rephrase_acc, _ = icl_multimodal_lm_eval(model, model_name, hparams, tok, icl_examples, m_rel_ground_truth_2, new_fact_m_rel_prompt_2_image, rephrase_image)
             ret['m_rel_prompt_2_image_rephrase_acc'] = m_rel_prompt_2_image_rephrase_acc
@@ -482,18 +477,15 @@ def compute_icl_multimodal_edit_quality(
         elif knowledge_type ==2:
             
             ret['knowledge_type'] = 2
-
-            #新增text reliability  引入def compute_icl_edit_quality()中的计算格式，利用def icl_lm_eval()函数 用于文本问题计算
             new_fact_rel_prompt = f'New Fact: {prompt} {target}\nPrompt: {rel_prompt}'
             rel_prompt_acc, _  = icl_multimodal_lm_eval(model, model_name, hparams, tok, icl_examples,rel_ground_truth, new_fact_rel_prompt, None)
             ret['rel_prompt_acc'] = rel_prompt_acc
-
 
             ret['rel_acc_prompt']  = record["rel_prompt"]
             ret['rel_acc_ground_truth'] = record["rel_ground_truth"]
             ret['rel_acc_predict'] = icl_multimodal_decode(model, model_name, hparams, tok, icl_examples, rel_ground_truth, new_fact_rel_prompt, None)
 
-        #新增mm reliability+ origin image
+
 
             new_fact_m_rel_prompt_image = f'New Fact: {prompt} {target}\nPrompt: {m_rel_prompt}'
             m_rel_prompt_image_acc, _ = icl_multimodal_lm_eval(model, model_name, hparams, tok, icl_examples,m_rel_ground_truth, new_fact_m_rel_prompt_image, image)
@@ -504,7 +496,7 @@ def compute_icl_multimodal_edit_quality(
             ret['m_rel_acc_predict'] = icl_multimodal_decode(model, model_name, hparams, tok, icl_examples, m_rel_ground_truth, new_fact_m_rel_prompt_image, image)
 
 
-            #######  m_rel_prompt_1_image_acc
+
             new_fact_m_rel_prompt_image = f'New Fact: {prompt} {target}\nPrompt: {image_rephrase_question}'
             m_rel_prompt_image_rephrase_acc, _ = icl_multimodal_lm_eval(model, model_name, hparams, tok, icl_examples, m_rel_ground_truth, new_fact_m_rel_prompt_image, rephrase_image)
             ret['m_rel_prompt_image_rephrase_acc'] = m_rel_prompt_image_rephrase_acc
@@ -543,57 +535,44 @@ def compute_icl_multimodal_edit_quality(
                 ret['port_prompt'] = record["portability_prompt"]
                 ret['port_ground_truth'] = record["portability_ground_truth"]
                 ret['port_predict'] = tok.decode(pred_targ_ids[0][0], skip_special_tokens=True)
-    # 打开文件并追加内容
+    
     import json
     import os
-    # 将 Tensor 转换为列表的递归函数
+    
     def tensor_to_list(obj):
         if isinstance(obj, torch.Tensor):
-            return obj.tolist()  # 将 Tensor 转换为列表
+            return obj.tolist()  
         elif isinstance(obj, dict):
-            return {k: tensor_to_list(v) for k, v in obj.items()}  # 递归处理 dict
+            return {k: tensor_to_list(v) for k, v in obj.items()} 
         elif isinstance(obj, list):
-            return [tensor_to_list(i) for i in obj]  # 递归处理 list
-        return obj  # 如果不是 Tensor，就直接返回
+            return [tensor_to_list(i) for i in obj]  
+        return obj  
 
-# 将包含 Tensor 的 dict 转换为 JSON 可序列化的格式
+
     ret_serializable = tensor_to_list(ret)
     from datetime import datetime
-    
-    # if hparams.data_type == 'entity':
-    #     hparams.results_dir = "./results/entity"
-    # elif hparams.data_type == 'visual':
-    #     hparams.results_dir = "./results/visual"
-    # elif hparams.data_type == 'user':
-    #     hparams.results_dir = "./results/user"
-
     hparams.results_dir = f"./results/{hparams.data_type}"
-
-    # 固定文件名，而不是每次使用当前时间
     model_dir = os.path.join(hparams.results_dir, "IKE")
     decode_path = f'{model_dir}/{hparams.model_name}_IKE_k={hparams.k}.json'
 
-    # 检查文件夹是否存在，不存在则创建
     if not os.path.exists(model_dir):
         os.makedirs(model_dir)
 
-    # 检查文件是否存在并读取现有的内容
+
     if os.path.exists(decode_path):
         with open(decode_path, 'r') as json_file:
             try:
-                data = json.load(json_file)  # 尝试读取现有的JSON内容
+                data = json.load(json_file)  
             except json.JSONDecodeError:
-                data = []  # 如果文件是空的或无法解析，使用空列表
+                data = []  
     else:
-        data = []  # 文件不存在时，使用空列表
-
-    # 追加新的数据到列表中
+        data = []  
     data.append(ret_serializable)
 
-    # 将更新后的列表写入文件中
+    
     with open(decode_path, 'w') as json_file:
-        json.dump(data, json_file, indent=4)  # 以4个空格缩进写入JSON内容
-        json_file.write("\n")  # 可选，写入换行符以保持格式整齐
+        json.dump(data, json_file, indent=4)  
+        json_file.write("\n")  
     ######### portability #########
 
     return ret
@@ -690,13 +669,10 @@ def icl_multimodal_decode(
     else:
         raise ValueError("logits should have 3 dimensions")
         
-    # 创建掩码并处理标签
+   
     mask = targ != -100
     targ[~mask] = 0
-    # 获取预测ID并根据掩码填充
     pred_ids = logits.argmax(-1).masked_fill(~mask, 0).detach().cpu()
-    
-    # 解码预测ID为字符串
     predict = tokenizer.decode(pred_ids.tolist()[0], skip_special_tokens=True)
     return predict
 
