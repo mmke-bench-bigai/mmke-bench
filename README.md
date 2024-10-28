@@ -5,7 +5,7 @@
 
 
 
-[![arXiv PDF](https://img.shields.io/badge/Arxiv-406.11194-ff5733?logo=arXiv)]()  [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-MMKE--Bench--Dataset-lightgrey)]()  [![Model](https://img.shields.io/badge/%F0%9F%A4%97%20Model-MMKE--Bench--Model-3357ff)](https://huggingface.co/datasets/MMMU/MMMU)  [![Slides PDF](https://img.shields.io/badge/Slides-PDF-ff1493?logo=slideshare)](MMKE-Bench.pdf)
+[![arXiv PDF](https://img.shields.io/badge/Arxiv-406.11194-ff5733?logo=arXiv)]()  [![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-MMKE--Bench--Dataset-lightgrey)](https://huggingface.co/datasets/kailinjiang/MMKE-Bench-dataset)  [![Model](https://img.shields.io/badge/%F0%9F%A4%97%20Model-MMKE--Bench--Model-3357ff)](https://huggingface.co/kailinjiang/MMKE-Bench)  [![Slides PDF](https://img.shields.io/badge/Slides-PDF-ff1493?logo=slideshare)](MMKE-Bench.pdf)
 
 
 
@@ -29,7 +29,7 @@
 
 * **[2024.10.25]**  **Code** is available now!
 
-* **[2024.10.25]**  We release the **MMKE-Bench dataset** at 🤗 [Huggingface Dataset](https://huggingface.co/datasets/Yofuria/ICE).
+* **[2024.10.25]**  We release the **MMKE-Bench dataset** at 🤗 [Huggingface Dataset](https://huggingface.co/datasets/kailinjiang/MMKE-Bench-dataset).
 
 * **[2023.10.25]**  We hung the **paper** on 🤗 [Huggingface Papers](https://huggingface.co/papers/2406.11194).
 
@@ -73,7 +73,7 @@ We introduce <strong><span style="color:brown">MMKE-Bench</span></strong>, a ben
 
 
 
-You can download **MMKE-Bench data** 🤗 [Huggingface Dataset](https://huggingface.co/datasets/Yofuria/ICE). And the expected structure of files is:
+You can download **MMKE-Bench data** 🤗 [Huggingface Dataset](https://huggingface.co/datasets/kailinjiang/MMKE-Bench-dataset). And the expected structure of files is:
 
 ```text
 MMKE-Bench
