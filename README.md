@@ -204,6 +204,70 @@ Editing GPU memory usage
 |     MEND     |    21GB    |   54GB   |   39GB   |  13GB  |
 
 
+Here we put under 'hugging_cache' folder and 'openai' folder:
+```bash
+# models in hugging_cache folder
+hugging_cache/
+├── all-MiniLM-L6-v2/
+├── bert-base-uncased/
+├── distilbert-base-cased/
+├── Llama-2-7b-hf/
+├── llava-v1.5-7b/
+├── mplug-owl2-llama2-7b/
+├── opt-2.7b/
+├── opt-125m/
+├── Qwen-7B/
+├── Qwen-VL/
+├── vicuna-7b/
+├── vicuna-7b-v1.5/
+│   
+├── blip2_pretrained_flant5xxl.pth
+├── blip2_pretrained_opt2.7b.pth
+├── eva_vit_g.pth
+└── pretrained_minigpt4_7b.pth
+
+# clip-vit model in openai folder
+openai/
+└── clip-vit-large-patch14-336/
+``` 
+Links are in the following:
+<table>
+    <tr>
+        <td><a href="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2">all-MiniLM-L6-v2</a></td>
+        <td><a href="https://huggingface.co/google-bert/bert-base-uncased">bert-base-uncased</a></td>
+        <td><a href="https://huggingface.co/distilbert/distilbert-base-cased">distilbert-base-cased</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://huggingface.co/liuhaotian/llava-v1.5-7b">llava-v1.5-7b</a></td>
+        <td><a href="https://huggingface.co/facebook/opt-2.7b">opt-2.7b</a></td>
+        <td><a href="https://huggingface.co/facebook/opt-125m">opt-125m</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://huggingface.co/Qwen/Qwen-7B">Qwen-7B</a></td>
+        <td><a href="https://huggingface.co/Qwen/Qwen-VL">Qwen-VL</a></td>
+        <td><a href="https://huggingface.co/Vision-CAIR/vicuna-7b/tree/main">vicuna-7b</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://huggingface.co/lmsys/vicuna-7b-v1.5">vicuna-7b-v1.5</a></td>
+        <td><a href="https://huggingface.co/NousResearch/Llama-2-7b-hf">Llama-2-7b-hf</a></td>
+        <td><a href="https://huggingface.co/MAGAer13/mplug-owl2-llama2-7b">mplug-owl2-llama2-7b</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://huggingface.co/spaces/Vision-CAIR/minigpt4/blob/main/blip2_pretrained_flant5xxl.pth">blip2_pretrained_flant5xxl.pth</a></td>
+        <td><a href="https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/blip2_pretrained_opt2.7b.pth">blip2_pretrained_opt2.7b.pth</a></td>
+        <td><a href="https://huggingface.co/spaces/Vision-CAIR/minigpt4/blob/main/prerained_minigpt4_7b.pth">prerained_minigpt4_7b.pth</a></td>
+    </tr>
+    <tr>
+        <td><a href="https://storage.googleapis.com/sfr-vision-language-research/LAVIS/models/BLIP2/eva_vit_g.pth">eva_vit_g.pth</a></td>
+        <td><a href="https://huggingface.co/openai/clip-vit-large-patch14-336">clip-vit-large-patch14-336</a></td>
+        <td></td>
+    </tr>
+</table>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
 
 ## ✏️ Citation
 
