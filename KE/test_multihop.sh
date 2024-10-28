@@ -34,7 +34,7 @@ fi
 
 export CUDA_VISIBLE_DEVICES=$GPU
 time=$(date "+%Y%m%d_%H%M%S")
-python test_multihop.py \
+python KE/test_multihop.py \
     --model_name $MODEL \
     --hop $HOP \
     --data_type $TYPE \
