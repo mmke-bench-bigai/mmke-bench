@@ -62,19 +62,15 @@ class MultimodalTrainer(BaseTrainer):
         self.tok = tokenizer 
 
     def process_predict(self, logits, labels, tok):
-        # 检查维度是否为3
+        
         if logits.dim() == 3:
-            # 移除最后一维并确保与labels的长度匹配
             logits = logits[:, :-1]
             logits = logits[:, -labels.shape[1]:]
         
-        # 创建掩码并处理标签
+        
         mask = labels != -100
         labels[~mask] = 0
-        # 获取预测ID并根据掩码填充
         pred_ids = logits.argmax(-1).masked_fill(~mask, 0).detach().cpu()
-        
-        # 解码预测ID为字符串
         predict = tok.decode(pred_ids.tolist()[0], skip_special_tokens=True)
         return predict
 
@@ -524,15 +520,15 @@ class MultimodalTrainer(BaseTrainer):
         #####################################
         # if batch['knowledge_type']['knowledge_type'] == 0 or batch['knowledge_type']['knowledge_type']==1:
         if "T_Rel_1" in batch:
-            #新增的T-Rel
+           
             info_dict["T_Rel_1/acc"]= T_Rel_1_edit_dict["acc"].item()
             info_dict["T_Rel_2/acc"]= T_Rel_2_edit_dict["acc"].item()
             info_dict["T_Rel_average/acc"]= (info_dict["T_Rel_1/acc"] + info_dict["T_Rel_2/acc"]) / 2
-            #新增的I-Rel
+            
             info_dict["M_Rel_1/acc"]= M_Rel_1_edit_dict["acc"].item()
             info_dict["M_Rel_2/acc"]= M_Rel_2_edit_dict["acc"].item()
             info_dict["M_Rel_average/acc"]= (info_dict["M_Rel_1/acc"] + info_dict["M_Rel_2/acc"]) / 2
-            #新增的I-Gen
+           
             info_dict["Gen_M_Rel_1/acc"]= Gen_M_Rel_1_edit_dict["acc"].item()
             info_dict["Gen_M_Rel_2/acc"]= Gen_M_Rel_2_edit_dict["acc"].item()
             info_dict["Gen_M_Rel_average/acc"]= (info_dict["Gen_M_Rel_1/acc"] + info_dict["Gen_M_Rel_2/acc"]) / 2
@@ -543,11 +539,9 @@ class MultimodalTrainer(BaseTrainer):
                 info_dict['knowledge_type'] = 1
 
         else:
-            #新增的T-Rel
+            
             info_dict["T_Rel/acc"]= T_Rel_edit_dict["acc"].item()
-            #新增的I-Rel
             info_dict["M_Rel/acc"]= M_Rel_edit_dict["acc"].item()
-            #新增的I-Gen
             info_dict["Gen_M_Rel/acc"]= Gen_M_Rel_edit_dict["acc"].item()
 
             info_dict['knowledge_type'] =2
@@ -570,7 +564,7 @@ class MultimodalTrainer(BaseTrainer):
                     
                     del port_outputs
                     torch.cuda.empty_cache()
-                    #输出decode output
+                    
                     Port_prompt = batch['port'][0]['prompt']
                     Port_ground_truth = batch['port'][0]['ground_truth']
                     Port_predict = self.process_predict(port_logits,port_labels,tok)
@@ -728,15 +722,15 @@ class MultimodalTrainer(BaseTrainer):
         ##########################################################################
         if stats['knowledge_type_val'] == 1 or stats['knowledge_type_val'] == 0:
         # if stats['T_Rel_1/acc_val'] is not None:
-            #新增的T-Rel
+            
             T_Rel_1_acc = f"{stats['T_Rel_1/acc_val']:<12.5f}"
             T_Rel_2_acc = f"{stats['T_Rel_2/acc_val']:<12.5f}"
             T_Rel_average_acc = f"{stats['T_Rel_average/acc_val']:<12.5f}"
-            #新增的I-Rel
+           
             M_Rel_1_acc = f"{stats['M_Rel_1/acc_val']:<12.5f}"
             M_Rel_2_acc = f"{stats['M_Rel_2/acc_val']:<12.5f}"
             M_Rel_average_acc = f"{stats['M_Rel_average/acc_val']:<12.5f}"
-            #新增的I-Gen
+            
             Gen_M_Rel_1_acc = f"{stats['Gen_M_Rel_1/acc_val']:<12.5f}"
             Gen_M_Rel_2_acc = f"{stats['Gen_M_Rel_2/acc_val']:<12.5f}"
             Gen_M_Rel_average_acc = f"{stats['Gen_M_Rel_average/acc_val']:<12.5f}"
@@ -747,11 +741,9 @@ class MultimodalTrainer(BaseTrainer):
 
         elif stats['knowledge_type_val'] == 2:
         # else:
-            #新增的T-Rel
+            
             T_Rel_acc = f"{stats['T_Rel/acc_val']:<12.5f}"
-            #新增的I-Rel
             M_Rel_acc = f"{stats['M_Rel/acc_val']:<12.5f}"
-            #新增的I-Gen
             Gen_M_Rel_acc = f"{stats['Gen_M_Rel/acc_val']:<12.5f}"
             
             LOG.info(
@@ -791,7 +783,7 @@ class MultimodalTrainer(BaseTrainer):
 
         start_time = time.time()
 
-        # 先创建一个新的JSON文件，并写入空列表的开始符号 '['
+        
         with open(json_output_file, 'w') as f:
             f.write('[\n')
 
@@ -801,18 +793,18 @@ class MultimodalTrainer(BaseTrainer):
             _, _, _, _, info_dict = self.edit_step(batch, training=False)
             averager.add(info_dict)
 
-            # 将tensor类型的数据转换为list
+           
             for key, value in info_dict.items():
                 if isinstance(value, torch.Tensor):
                     info_dict[key] = value.tolist()
 
-            # 将每个info_dict追加写入JSON文件
+            
             with open(json_output_file, 'a') as f:
-                json.dump(info_dict, f, indent=4)  # 4个空格缩进
+                json.dump(info_dict, f, indent=4)  
                 if val_step < steps - 1:
-                    f.write(",\n")  # 在每条记录后面加逗号并换行
+                    f.write(",\n")  
                 else:
-                    f.write("\n")  # 最后一条记录后面不加逗号
+                    f.write("\n")  
 
             if (
                 log
@@ -822,7 +814,7 @@ class MultimodalTrainer(BaseTrainer):
                     val_step, averager.average(), start_time, steps
                 )
 
-        # 完成数据写入后，关闭列表结构（加上列表的结束符号 ']'）
+        
         with open(json_output_file, 'a') as f:
             f.write(']\n')
 
