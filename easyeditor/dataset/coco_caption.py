@@ -152,7 +152,7 @@ class CaptionDataset(BaseDataset):
 
             
             ##########################################################################################################
-            #新增reliability，multimodal_reliability 针对entity-level和user-specific数据
+            
             #text-reliability
             if  item['knowledge_type']=='entity_level' or item['knowledge_type']=='user_specific':
                 item['rel_prompt_1'] = record['rel_1']
@@ -171,7 +171,7 @@ class CaptionDataset(BaseDataset):
                 elif item['knowledge_type']=='user_specific':
                     item['knowledge_type'] = 1
                 
-            #新增reliability，multimodal_reliability 针对visual_knowledge数据
+         
             elif 'visual_knowledge' in item['knowledge_type']:
                 
                 item['rel_prompt'] = record['rel']
@@ -403,7 +403,7 @@ class CaptionDataset(BaseDataset):
                 knowledge_type['knowledge_type'] =0
             elif batch[0]['knowledge_type']==1:
                 knowledge_type['knowledge_type'] =1
-            #新增text-reliability
+            
             T_Rel_1 = {}
             T_Rel_1['image'] = torch.zeros(1, 3, 448, 448) if "owl-2" in self.config.model_name else None
             T_Rel_1['text_input'] = [" ".join([q, a]) for q, a in zip(rel_q_1, rel_a_1)]
@@ -428,7 +428,7 @@ class CaptionDataset(BaseDataset):
             T_Rel_2['prompts_len'] = [len(self.tok.encode(q, add_special_tokens=False)) for q in rel_q_2]
             T_Rel_2['labels'] = self.tok(rel_a_2, add_special_tokens=False, return_tensors="pt",)["input_ids"]
 
-            #新增multimodal-reliability
+           
             M_Rel_1 = {}
             M_Rel_1['image'] = torch.stack(image, dim=0) if ("qwen-vl" not in self.config.model_name and "owl-2" not in self.config.model_name) else image
             M_Rel_1['text_input'] = [" ".join([q, a]) for q, a in zip(m_rel_q_1, m_rel_a_1)]
@@ -455,7 +455,7 @@ class CaptionDataset(BaseDataset):
             M_Rel_2['prompts_len'] = [len(self.tok.encode(q, add_special_tokens=False)) for q in m_rel_q_2]
             M_Rel_2['labels'] = self.tok(m_rel_a_2, add_special_tokens=False, return_tensors="pt",)["input_ids"]
 
-            #新增multimodal-reliability + image_rephrase
+            
             Gen_M_Rel_1 = {}
             Gen_M_Rel_1['image'] = torch.stack(image_rephrase, dim=0) if ("qwen-vl" not in self.config.model_name and "owl-2" not in self.config.model_name) else image_rephrase
             Gen_M_Rel_1['text_input'] = [" ".join([q, a]) for q, a in zip(m_rel_q_1, m_rel_a_1)]
@@ -486,7 +486,7 @@ class CaptionDataset(BaseDataset):
             knowledge_type = {}
             knowledge_type['knowledge_type'] =2
 
-            #新增text-reliability
+            
             T_Rel = {}
             T_Rel['image'] = torch.zeros(1, 3, 448, 448) if "owl-2" in self.config.model_name else None
             T_Rel['text_input'] = [" ".join([q, a]) for q, a in zip(rel_q, rel_a)]
@@ -500,7 +500,7 @@ class CaptionDataset(BaseDataset):
             T_Rel['prompts_len'] = [len(self.tok.encode(q, add_special_tokens=False)) for q in rel_q]
             T_Rel['labels'] = self.tok(rel_a, add_special_tokens=False, return_tensors="pt",)["input_ids"]
 
-            #新增multimodal-reliability
+            
             M_Rel = {}
             M_Rel['image'] = torch.stack(image, dim=0) if ("qwen-vl" not in self.config.model_name and "owl-2" not in self.config.model_name) else image
             M_Rel['text_input'] = [" ".join([q, a]) for q, a in zip(m_rel_q, m_rel_a)]
@@ -514,7 +514,7 @@ class CaptionDataset(BaseDataset):
             M_Rel['prompts_len'] = [len(self.tok.encode(q, add_special_tokens=False)) for q in m_rel_q]
             M_Rel['labels'] = self.tok(m_rel_a, add_special_tokens=False, return_tensors="pt",)["input_ids"]
 
-            #新增multimodal-reliability + image_rephrase
+            
             Gen_M_Rel = {}
             Gen_M_Rel['image'] = torch.stack(image_rephrase, dim=0) if ("qwen-vl" not in self.config.model_name and "owl-2" not in self.config.model_name) else image_rephrase
             Gen_M_Rel['text_input'] = [" ".join([q, a]) for q, a in zip(image_rephrase_q, m_rel_a)]
