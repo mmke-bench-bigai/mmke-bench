@@ -20,6 +20,7 @@ if __name__ == "__main__":
     )
     parser.add_argument("--save_top_k", type=int, default=2)
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--data_type", type=str, required=True, help="The entity name that the model holds") 
 
     parser = MLLM_KE.add_model_specific_args(parser)
     parser = Trainer.add_argparse_args(parser)
