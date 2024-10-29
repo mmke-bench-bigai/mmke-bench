@@ -72,7 +72,6 @@ We introduce <strong><span style="color:brown">MMKE-Bench</span></strong>, a ben
 </p>
 
 
-
 You can download **MMKE-Bench data** 🤗 [Huggingface Dataset](https://huggingface.co/datasets/kailinjiang/MMKE-Bench-dataset). And the expected structure of files is:
 
 ```text
