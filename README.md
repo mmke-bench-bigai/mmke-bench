@@ -178,7 +178,7 @@ bash KE/test_multihop.sh 0 minigpt4 1 entity
 bash KE/test_multihop.sh 0 blip2 1 entity
 ```
 
-Editing GPU memory usage 
+Editing GPU memory usage 【memory/res_max_val】
 |     Entity   |  BLIP2-OPT | LLaVA-1.5| MiniGPT-4| --     |
 |:------------:|:----------:|:--------:|:--------:|:------:|
 |    FT-LLM    |    21GB    |   35GB   |   45GB   |  7GB   |
