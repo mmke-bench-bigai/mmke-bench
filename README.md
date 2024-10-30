@@ -14,10 +14,10 @@
 
 - [Table of Contents](#table-of-contents)
 - [🔔 News](#-news)
-- [🌟Overview](#overview)
+- [🌟 Overview](#overview)
 - [🤗 Dataset](#-dataset)
 - [🛠️ Requirements and Installation](#️-requirements-and-installation)
-- [💥Training](#training)
+- [💥 Training](#training)
 - [✏️ Citation](#️-citation)
 - [⭐ Star History](#star-history)
 - [🎉Contributors](#contributors)
@@ -27,6 +27,7 @@
 
 
 ## 🔔 News
+* **[2024.10.25]**  The **Project Page** is already on display！ [Project Page](https://mmke-bench-bigai.github.io/).
 
 * **[2024.10.25]**  **Code** is available now!
 
