@@ -27,7 +27,7 @@
 
 
 ## 🔔 News
-* **[2024.10.25]**  The **Project Page** is already on display！ [Project Page](https://mmke-bench-bigai.github.io/).
+* **[2024.10.30]**  The **Project Page** is already on display！ [Project Page](https://mmke-bench-bigai.github.io/).
 
 * **[2024.10.25]**  **Code** is available now!
 
