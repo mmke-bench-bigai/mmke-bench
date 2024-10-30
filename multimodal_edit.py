@@ -55,7 +55,7 @@ def MMKE_print_result(metrics, save_path=None):
         rephrase_image_acc = mean([m['post']['rephrase_image_acc'].item() for m in metrics])
         locality_acc = mean([m['post']['locality_acc'].item() for m in metrics])
         locality_image_acc = mean([m['post']['locality_image_acc'].item() for m in metrics])
-        # 新增
+        
         rel_prompt_1_acc = mean([m['post']['rel_prompt_1_acc'].item() for m in metrics])
         rel_prompt_2_acc = mean([m['post']['rel_prompt_2_acc'].item() for m in metrics])
         rel_prompt_acc_average = (rel_prompt_1_acc + rel_prompt_2_acc) / 2
@@ -79,7 +79,7 @@ def MMKE_print_result(metrics, save_path=None):
         print(f'rephrase_image_acc: {rephrase_image_acc}')
         print(f'locality_acc: {locality_acc}')
         print(f'locality_image_acc: {locality_image_acc}')
-        # 新增
+        
         print(f'rel_prompt_1_acc: {rel_prompt_1_acc}')
         print(f'rel_prompt_2_acc: {rel_prompt_2_acc}')
         print(f'rel_prompt_acc_average: {rel_prompt_acc_average}')
@@ -109,7 +109,7 @@ def MMKE_print_result(metrics, save_path=None):
                 f.write(f'rephrase_image_acc: {rephrase_image_acc}\n')
                 f.write(f'locality_acc: {locality_acc}\n')
                 f.write(f'locality_image_acc: {locality_image_acc}\n')
-                # 新增
+                
                 f.write(f'rel_prompt_1_acc: {rel_prompt_1_acc}\n')
                 f.write(f'rel_prompt_2_acc: {rel_prompt_2_acc}\n')
                 f.write(f'rel_prompt_acc_average: {rel_prompt_acc_average}\n')
@@ -134,7 +134,7 @@ def MMKE_print_result(metrics, save_path=None):
         rephrase_image_acc = mean([m['post']['rephrase_image_acc'].item() for m in metrics])
         locality_acc = mean([m['post']['locality_acc'].item() for m in metrics])
         locality_image_acc = mean([m['post']['locality_image_acc'].item() for m in metrics])
-        # 新增
+        
         rel_prompt_acc = mean([m['post']['rel_prompt_acc'].item() for m in metrics])
 
         m_rel_prompt_image_acc = mean([m['post']['m_rel_prompt_image_acc'].item() for m in metrics])
@@ -148,7 +148,7 @@ def MMKE_print_result(metrics, save_path=None):
         print(f'rephrase_image_acc: {rephrase_image_acc}')
         print(f'locality_acc: {locality_acc}')
         print(f'locality_image_acc: {locality_image_acc}')
-        # 新增
+        
         print(f'rel_prompt_acc: {rel_prompt_acc}')
         print(f'm_rel_prompt_image_acc: {m_rel_prompt_image_acc}')
         print(f'm_rel_prompt_image_rephrase_acc: {m_rel_prompt_image_rephrase_acc}')
@@ -168,7 +168,7 @@ def MMKE_print_result(metrics, save_path=None):
                 f.write(f'rephrase_image_acc: {rephrase_image_acc}\n')
                 f.write(f'locality_acc: {locality_acc}\n')
                 f.write(f'locality_image_acc: {locality_image_acc}\n')
-                # 新增
+                
                 f.write(f'rel_prompt_acc: {rel_prompt_acc}\n')
                 f.write(f'm_rel_prompt_image_acc: {m_rel_prompt_image_acc}\n')
                 f.write(f'm_rel_prompt_image_rephrase_acc: {m_rel_prompt_image_rephrase_acc}\n')
@@ -723,25 +723,9 @@ if __name__ == "__main__":
         print(f"Error: Function '{args.function_name}' does not exist.")
         sys.exit(1)
 
-    # Call the function dynamically
     globals()[args.function_name](args)
 
-    # function_name = sys.argv[1]
-    # hop = sys.argv[2] if len(sys.argv) > 2 else None
-    # data_type =  sys.argv[3]
 
-    # if data_type == 'entity':
-    #     train_json_path = 'data_json/entity_eval_clean.json'
-    #     eval_json_path = 'data_json/entity_eval_clean.json'
-    # elif data_type == 'visual':
-    #     train_json_path = 'data_json/visual_eval_clean.json'
-    #     eval_json_path = 'data_json/visual_eval_clean.json'
-    # elif data_type == 'user':
-    #     train_json_path = 'data_json/user_eval_clean.json'
-    #     eval_json_path = 'data_json/user_eval_clean.json'
-
-    # if function_name not in globals() or not callable(globals()[function_name]):
-    #     print(f"Error: Function '{function_name}' does not exist.")
     #     sys.exit(1)
     # globals()[function_name]()
 
