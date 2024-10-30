@@ -104,14 +104,12 @@ def apply_ike_to_multimodal_model(
         new_fact = request['prompt'] + ' ' + request['target']
         query_sentence = f"New Fact: {new_fact}\nPrompt: {new_fact}\n\n"
 
-        # 随机选择K个句子
+
         def get_random_sentences(stored_sentences, K):
             return random.sample(stored_sentences, K)
 
-        # 取K个随机句子
         icl_examples = get_random_sentences(stored_sentences, hparams.k)
 
-        # 追加新的事实与提示
         icl_examples.append(f'New Fact: {new_fact}\nPrompt: {new_fact}\n\n')
     
     return icl_examples
