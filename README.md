@@ -183,9 +183,9 @@ Editing GPU memory usage 【memory/res_max_val】
 |     Entity   |  BLIP2-OPT | LLaVA-1.5| MiniGPT-4|mPLUG-Owl2|
 |:------------:|:----------:|:--------:|:--------:|:--------:|
 |    FT-LLM    |    21GB    |   35GB   |   45GB   |  42GB    |
-| FT-Alignment |    24GB    |   40GB   |   50GB   |  7GB     |
+| FT-Alignment |    24GB    |   40GB   |   50GB   |  42GB    |
 |     SERAC    |    17GB    |   32GB   |   67GB   |  78GB    |
-|      IKE     |    14GB    |   50GB   |   26GB   |  10GB    |
+|      IKE     |    14GB    |   50GB   |   26GB   |  25GB    |
 |     MEND     |    23GB    |   61GB   |   43GB   |  43GB    |
 
 |     Visual   |  BLIP2-OPT | LLaVA-1.5| MiniGPT-4|mPLUG-Owl2|
@@ -193,15 +193,15 @@ Editing GPU memory usage 【memory/res_max_val】
 |    FT-LLM    |    21GB    |   35GB   |   45GB   |  42GB    |
 | FT-Alignment |    23GB    |   39GB   |   48GB   |  42GB    |
 |     SERAC    |    16GB    |   73GB   |   58GB   |  63B     |
-|      IKE     |    15GB    |   25GB   |   25GB   |  10GB    |
+|      IKE     |    15GB    |   25GB   |   25GB   |  24GB    |
 |     MEND     |    21GB    |   55GB   |   40GB   |  42GB    |
 
 |     User     |  BLIP2-OPT | LLaVA-1.5| MiniGPT-4|mPLUG-Owl2|
 |:------------:|:----------:|:--------:|:--------:|:--------:|
 |    FT-LLM    |    21GB    |   35GB   |   45GB   |  42GB    |
-| FT-Alignment |    23GB    |   38GB   |   48GB   |  7GB     |
+| FT-Alignment |    23GB    |   38GB   |   48GB   |  42GB     |
 |     SERAC    |    15GB    |   71GB   |   56GB   |  60GB    |
-|      IKE     |    23GB    |   30GB   |   28GB   |  10GB    |
+|      IKE     |    23GB    |   30GB   |   28GB   |  27GB    |
 |     MEND     |    21GB    |   54GB   |   39GB   |  41GB    |
 
 
