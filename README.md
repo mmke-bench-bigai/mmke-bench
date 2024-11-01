@@ -113,6 +113,13 @@ conda env create -f envs/mmke.yml
 
 #for blip2 llava minigpt4 in KE
 conda env create -f envs/mmke-ke.yml
+
+# create conda env
+#for mPLUG-Owl2 in FT IKE MEND SERAC 
+conda env create -f envs/owl2.yml
+
+#for mPLUG-Owl2 in KE
+conda env create -f envs/owl2_ke.yml
 ```
 
 
