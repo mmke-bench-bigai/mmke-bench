@@ -103,6 +103,8 @@ class MultimodalEditor:
 
             elif "owl-2" in hparams.model_name.lower():
                 from ..trainer.mPLUG_Owl2.mplug_owl2.model.builder import load_pretrained_model
+                from ..trainer.mPLUG_Owl2.mplug_owl2.model.modeling_mplug_owl2 import replace_llama_modality_adaptive
+                replace_llama_modality_adaptive()
                 tokenizer , model, _, _ = load_pretrained_model(hparams.name, None, 'mplug_owl2', load_8bit=False, load_4bit=False, device=f"cuda:{hparams.device}")
                 for param in model.parameters():
                     param.requires_grad = True
@@ -125,39 +127,18 @@ class MultimodalEditor:
             else:
                 raise NotImplementedError(f"Model {hparams.model_name} not supported")
 
-            # if (hparams is not None and hasattr(hparams, 'tokenizer_name')):
-            #     tok_name = (
-            #         hparams.tokenizer_name
-            #         if hparams.tokenizer_name is not None
-            #         else hparams.name
-            #     )
-            #     tokenizer = getattr(transformers, hparams.tokenizer_class).from_pretrained(
-            #         tok_name
-            #     )            
-            #     if tokenizer.pad_token == None or tokenizer.pad_token == '':
-            #         tokenizer.pad_token = tokenizer.eos_token    
-            #     self.tok = tokenizer     
-
             if (hparams is not None and hasattr(hparams, 'tokenizer_name')):
                 tok_name = (
                     hparams.tokenizer_name
                     if hparams.tokenizer_name is not None
                     else hparams.name
                 )
-                if hparams.tokenizer_class == "QWenTokenizer":
-                    tokenizer = AutoTokenizer.from_pretrained(hparams.name, trust_remote_code=True, pad_token='<|endoftext|>')
-                elif hparams.model_name == "owl-2":
-                    tokenizer = AutoTokenizer.from_pretrained(hparams.name, use_fast=False, trust_remote_code=True)
-                else:
-                    tokenizer = getattr(transformers, hparams.tokenizer_class).from_pretrained(
-                        tok_name, trust_remote_code=True
-                    )            
+                tokenizer = getattr(transformers, hparams.tokenizer_class).from_pretrained(
+                    tok_name
+                )            
                 if tokenizer.pad_token == None or tokenizer.pad_token == '':
-                    tokenizer.pad_token = tokenizer.eos_token 
-        
-                self.tok = tokenizer 
-
-
+                    tokenizer.pad_token = tokenizer.eos_token    
+                self.tok = tokenizer      
             else:
                 raise NotImplementedError('missing tokenizer_name in hparams')                   
         else:
@@ -739,5 +720,3 @@ class MultimodalEditor:
 #     )
 #
 #     metrics, edited_model, _ = editor.edit(prompts='What university did Watts Humphrey attend?', ground_truth='Illinois Institute of Technology', target_new='University of Michigan')
-
-
