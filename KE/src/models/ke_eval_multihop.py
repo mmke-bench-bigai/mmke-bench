@@ -36,7 +36,9 @@ class MLLM_KE(LightningModule):
     def __init__(self, *args, **kwargs):
         super().__init__()
         self.save_hyperparameters()
-        self.model, self.tokenizer = get_model(self.hparams.model_name)
+        # self.model, self.tokenizer = get_model(self.hparams.model_name)
+        if self.hparams.model_name == 'blip2' or self.hparams.model_name == 'minigpt4' or self.hparams.model_name == 'llava' :
+            self.model, self.tokenizer = get_model(self.hparams.model_name)
 
         if self.hparams.model_name == 'blip2':
             self.model_hparams = MultimodalTrainingHparams.from_hparams(
