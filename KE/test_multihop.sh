@@ -3,7 +3,7 @@
 # USAGE: bash test_multihop.sh [GPU_ID] [MODEL_NAME] [HOP_NUM]
 # EXAMPLE: bash test_multihop.sh 0 blip2 2
 
-# MODEL_NAME=[blip2, minigpt4, llava]
+# MODEL_NAME=[blip2, minigpt4, llava，owl-2]
 # HOP_NUM=[1, 2, 3, 4]
 
 Blip2_ckpt="/scratch2/mas/jiangkailin/jkl/MMKE-rebuttal/VLKEB_F/models/entity/blip2/version_0/checkpoints/model-epoch=15-valid_acc=0.6215.ckpt"
